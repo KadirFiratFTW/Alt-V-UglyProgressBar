@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgressBar</title>
+    <style>
+        body {
+            background-color: transparent !important;
+            overflow: hidden;
+        }
+
+        .div_progress {
+            display:none;
+            bottom:50px;
+            width: 400px;
+            height: 40px;
+            border: 1px solid black;
+            box-shadow: 0 0 10px #00000086;
+            position: absolute;
+            left: calc(50% - 200px)
+        }
+
+        .div_title {
+            position: absolute;
+            z-index: 12351325;
+            width: 100%;
+            text-align: center;
+            color: white;
+            top:10px;
+            text-shadow: 0 0 5px white;
+        }
+
+        .div_progress_bar {
+            width: 0%;
+            height:40px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div_progress">
+        <div class="div_progress_bar"></div>
+        <div class="div_title">
+        </div>
+    </div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="app.js"></script>
+
+</html>
