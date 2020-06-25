@@ -1,0 +1,2 @@
+import alt from 'alt';
+
