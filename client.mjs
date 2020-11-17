@@ -1,14 +1,17 @@
 import native from 'natives';
 import alt from 'alt';
 
-const ProgressUI = new alt.WebView("http://resource/html/index.html")
+let ProgressUI = null
 
 export function drawProgress(time, text, cb) {
+    if(ProgressUI){return;}
+    ProgressUI = new alt.WebView("http://resource/html/index.html")
+    ProgressUI.on("ready", function(){
+        ProgressUI.emit("start", time, text)    
 
-    ProgressUI.emit("start", time, text)    
-
-    ProgressUI.on("finish", () => {
-        cb();
+        ProgressUI.on("finish", () => {
+            cb();
+            ProgressUI.destroy();
+        })
     })
-
 }
